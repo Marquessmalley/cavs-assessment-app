@@ -1,5 +1,13 @@
-export default function Home() {
+import PortalHero from "@/components/PortalHero";
+import PortalStartingLineup from "@/components/PortalStartingLineUp";
+export default function PlayerPortal() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20"></div>
+    <div className="h-screen flex flex-col items-center justify-center">
+      <PortalHero
+        title="Welcome to the Cleveland Cavaliers Player Portal"
+        description="View teams player profile and statistics."
+      />
+      <PortalStartingLineup />
+    </div>
   );
 }
