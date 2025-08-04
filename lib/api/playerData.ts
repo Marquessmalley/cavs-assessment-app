@@ -30,7 +30,10 @@ export async function fetchPlayerStats(playerId: string) {
   if (!res.ok) throw new Error(`Response status: ${res.status}`);
 
   const playerStats = await res.json();
-  console.log(playerStats.data.pl);
+  const { avg, tot, min } = playerStats.data.pl;
+
+  // console.log("Average: ", avg);
+  // console.log("total: ", tot);
 
   return playerStats;
 }

@@ -17,12 +17,15 @@ export default async function PlayerProfilePage({
   const playerStats = await fetchPlayerStats(playerId);
 
   return (
-    <div className="">
+    <div className="mb-24">
       <div className="">
         <PlayerHeader playerBioInfo={playerBioInfo} playerImage={playerImage} />
       </div>
-      <div className="mt-10 bg-red-100 ">
-        <PlayerStatsTable playerStats={playerStats} />
+      <div className="flex justify-center">
+        <PlayerStatsTable
+          playerBioInfo={playerBioInfo}
+          playerStats={playerStats}
+        />
       </div>
     </div>
   );

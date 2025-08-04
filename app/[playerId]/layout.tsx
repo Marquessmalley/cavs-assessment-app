@@ -3,5 +3,5 @@ export default function PlayerProfileLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="h-screen ">{children}</div>;
+  return <div className=" mb-24">{children}</div>;
 }
