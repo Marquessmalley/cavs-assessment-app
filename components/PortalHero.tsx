@@ -1,4 +1,4 @@
-import { bebasNeue } from "@/app/layout";
+import { bebasNeue } from "@/app/font";
 interface IPortalHeroProps {
   title: string;
   description: string;

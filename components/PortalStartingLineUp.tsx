@@ -1,6 +1,6 @@
 import { startingLineup } from "@/lib/placeholder-data";
 import LineupCard from "./ui/LineupCard";
-import { bebasNeue } from "@/app/layout";
+import { bebasNeue } from "@/app/font";
 
 export default function PortalStartingLineup() {
   return (
