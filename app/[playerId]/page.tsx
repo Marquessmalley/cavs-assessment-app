@@ -12,7 +12,7 @@ export default async function PlayerProfilePage({
   const playerImage = await fetchPlayerImage(playerId);
 
   return (
-    <div className="mb-10">
+    <div className=" mb-10">
       <div className="">
         <PlayerHeader playerBioInfo={playerBioInfo} playerImage={playerImage} />
       </div>

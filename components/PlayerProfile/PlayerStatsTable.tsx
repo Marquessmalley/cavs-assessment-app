@@ -1,5 +1,5 @@
 "use client";
-
+import { calculatePlayerStat } from "@/lib/playerUtils";
 export default function PlayerStatsTable({ playerBioInfo, mode }: any) {
   const seasonTotals = [...playerBioInfo.data.pl.ct.st].reverse();
 
@@ -42,105 +42,59 @@ export default function PlayerStatsTable({ playerBioInfo, mode }: any) {
                 <td className="px-4 py-2 text-center">{season.val}</td>
                 <td className="px-4 text-center">{season.gp}</td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.min
-                    : mode === "Per Game"
-                    ? (season.min / season.gp).toFixed(1)
-                    : ((season.min / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.min, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? twoPM
-                    : mode === "Per Game"
-                    ? (twoPM / season.gp).toFixed(1)
-                    : ((twoPM / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, twoPM, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? twoPA
-                    : mode === "Per Game"
-                    ? (twoPA / season.gp).toFixed(1)
-                    : ((twoPA / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, twoPA, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">{twoPP.toFixed(1)}</td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.tpm
-                    : mode === "Per Game"
-                    ? (season.tpm / season.gp).toFixed(1)
-                    : ((season.tpm / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.tpm, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.tpa
-                    : mode === "Per Game"
-                    ? (season.tpa / season.gp).toFixed(1)
-                    : ((season.tpa / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.tpa, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">{ttp.toFixed(1)}</td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.ftm
-                    : mode === "Per Game"
-                    ? (season.ftm / season.gp).toFixed(1)
-                    : ((season.ftm / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.ftm, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.fta
-                    : mode === "Per Game"
-                    ? (season.fta / season.gp).toFixed(1)
-                    : ((season.fta / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.fta, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">{ftp.toFixed(1)}</td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.ast
-                    : mode === "Per Game"
-                    ? (season.ast / season.gp).toFixed(1)
-                    : ((season.ast / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.ast, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.stl
-                    : mode === "Per Game"
-                    ? (season.stl / season.gp).toFixed(1)
-                    : ((season.stl / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.stl, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.blk
-                    : mode === "Per Game"
-                    ? (season.blk / season.gp).toFixed(1)
-                    : ((season.blk / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.blk, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.oreb
-                    : mode === "Per Game"
-                    ? (season.oreb / season.gp).toFixed(1)
-                    : ((season.oreb / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(
+                    mode,
+                    season.oreb,
+                    season.gp,
+                    season.min
+                  )}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.dreb
-                    : mode === "Per Game"
-                    ? (season.dreb / season.gp).toFixed(1)
-                    : ((season.dreb / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(
+                    mode,
+                    season.dreb,
+                    season.gp,
+                    season.min
+                  )}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? treb
-                    : mode === "Per Game"
-                    ? (treb / season.gp).toFixed(1)
-                    : ((treb / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, treb, season.gp, season.min)}
                 </td>
                 <td className="px-4 text-center">
-                  {mode === "Total"
-                    ? season.pts
-                    : mode === "Per Game"
-                    ? (season.pts / season.gp).toFixed(1)
-                    : ((season.pts / season.min) * 36).toFixed(1)}
+                  {calculatePlayerStat(mode, season.pts, season.gp, season.min)}
                 </td>
               </tr>
             );

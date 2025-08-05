@@ -10,7 +10,7 @@ export default function PlayerStatsView({ playerStats, playerBioInfo }: any) {
   );
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 mx-4">
       {/* DROP DOWN */}
       <div className=" max-w-5xl mx-auto  overflow-hidden my-6">
         <StatDropDown setMode={setMode} />

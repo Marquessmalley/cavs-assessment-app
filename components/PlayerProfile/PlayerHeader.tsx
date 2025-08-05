@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Widget from "../ui/Widget";
-import { calulateAge } from "@/lib/calculateAge";
+import { calulatePlayerAge } from "@/lib/playerUtils";
 
 export default function PlayerHeader({ playerBioInfo, playerImage }: any) {
   const { fn, ln, tc, tn, pos, num, ht, wt, dob, y, dy, hcc } =
@@ -16,7 +16,7 @@ export default function PlayerHeader({ playerBioInfo, playerImage }: any) {
       description: "Weight",
     },
     {
-      value: calulateAge(dob),
+      value: calulatePlayerAge(dob),
       description: "Age",
     },
     {
@@ -51,7 +51,7 @@ export default function PlayerHeader({ playerBioInfo, playerImage }: any) {
         </div>
 
         {/* DRAFT INFO */}
-        <div className="w-full pr-8">
+        <div className="w-full p-4">
           <div className=" border border-red-800 rounded-2xl  my-4 p-4 bg-gold opacity-85">
             <p className="font-bold text-3xl text-white">Draft Information</p>
             <p className="font-extralight text-2xl sm:text-xl text-white">
